@@ -53,3 +53,79 @@ function fnIsEven_some(arr) {
 
 fnIsEven_some([1, 3, 5]); // false
 fnIsEven_some([1, 3, 5, 6]); // true
+
+// ------------------------------------------------------------------------------------------------
+// Array.Prototype.filter()
+// array.filter(callback(element, index, arr), thisValue)
+
+// It is used to get a new array that has only those array elements
+// which pass the test implemented by the callback function.
+// It accepts a callback function as an argument.
+// This callback function has to return a true or false.
+// 🌟Elements for which the callback function returned true are added to the newly returned array.
+// ------------------------------------------------------------------------------------------------
+
+// Filter out the students who got more than 80 percent marks.
+function fnFilterStudents_filter(students) {
+  return students.filter((student) => {
+    return student.percentage > 80.0;
+  });
+}
+
+const students = [
+  { id: '001', percentage: 91.2 },
+  { id: '002', percentage: 78.7 },
+  { id: '003', percentage: 62.9 },
+  { id: '004', percentage: 81.4 },
+];
+
+fnFilterStudents_filter(students); // [ { id: '001', percentage: 91.2 }, { id: '004', percentage: 81.4 } ];
+
+// To remove undefined elements from an array.
+
+// In the callback function, we are returning elements directly.
+// So if the element has value,
+// it will be treated as true
+// and if the element is undefined, it will be automatically treated as false.
+function removeUndefined(myArray) {
+  return myArray.filter((element) => {
+    return element;
+  });
+}
+
+const arr = [1, undefined, 3, undefined, 5];
+
+removeUndefined(arr); // [ 1, 3, 5 ]
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Array.Prototype.map()
+// array.map(callback(element, index, arr), thisValue)
+
+// It is used to modify each element of the array according to the callback function.
+// It calls the callback function once for each element in the array in order.
+// The point to note is that callback function is called on indexes of elements who has assigned value including undefined.
+// ------------------------------------------------------------------------------------------------------------------------
+
+function fnAddDistinction_map(students_2) {
+  return students_2.map((student) => {
+    return {
+      ...student,
+      isPassed: student.percentage >= 75.0,
+    };
+  });
+}
+
+const students_2 = [
+  { id: '001', percentage: 91.2 },
+  { id: '002', percentage: 78.7 },
+  { id: '003', percentage: 62.9 },
+  { id: '004', percentage: 81.4 },
+];
+
+console.log(fnAddDistinction_map(students_2));
+// [
+//   { id: '001', percentage: 91.2, isPassed: true },
+//   { id: '002', percentage: 78.7, isPassed: true },
+//   { id: '003', percentage: 62.9, isPassed: false },
+//   { id: '004', percentage: 81.4, isPassed: true },
+// ];
