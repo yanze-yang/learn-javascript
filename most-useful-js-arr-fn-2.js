@@ -1,3 +1,5 @@
+// https://alligator.io/js/finally-understand-reduce/
+
 /**
  * ----------------------------------------------------------------------------
  * arr.reduce(callback, initialValue);
