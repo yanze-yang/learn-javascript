@@ -6,4 +6,4 @@
 
 [arr.reducer()](contents/most-useful-js-arr-fn-2.js)
 
-### What's is the result of `["1","2","3"].map(parseInt)`?
+### [What's is the result of `["1","2","3"].map(parseInt)`?](contents/parseint-and-map.js)
