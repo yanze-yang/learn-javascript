@@ -122,7 +122,7 @@ const students_2 = [
   { id: '004', percentage: 81.4 },
 ];
 
-console.log(fnAddDistinction_map(students_2));
+fnAddDistinction_map(students_2);
 // [
 //   { id: '001', percentage: 91.2, isPassed: true },
 //   { id: '002', percentage: 78.7, isPassed: true },
